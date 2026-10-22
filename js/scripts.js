@@ -71,18 +71,20 @@ document.querySelector(".dropdown").addEventListener("click", (e) => {
 });
   
 
-/* Card Slider - Swiper */
-var cardSlider = new Swiper('.card-slider', {
-	autoplay: {
-		delay: 4000,
-		disableOnInteraction: false
-	},
-	loop: true,
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}
-});
+/* Card Slider - Swiper (only when slider exists on page) */
+if (typeof Swiper !== 'undefined' && document.querySelector('.card-slider')) {
+	var cardSlider = new Swiper('.card-slider', {
+		autoplay: {
+			delay: 4000,
+			disableOnInteraction: false
+		},
+		loop: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		}
+	});
+}
 
 
 /* Modal Button Close And Scroll To Link */
